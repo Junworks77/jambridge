@@ -9,11 +9,20 @@ if (!existsSync(resolve("dist/index.html"))) {
   process.exit(1);
 }
 
+// `--configLoader native` imports vite.config.mjs directly, so vite never writes
+// a bundled temp file under node_modules/ — the app tree can stay read-only.
 const parts = [
   [process.execPath, [resolve("scripts/start-server.mjs")]],
   [
     process.execPath,
-    [resolve("node_modules/vite/bin/vite.js"), "preview", "--host", "0.0.0.0"],
+    [
+      resolve("node_modules/vite/bin/vite.js"),
+      "preview",
+      "--host",
+      "0.0.0.0",
+      "--configLoader",
+      "native",
+    ],
   ],
 ];
 const children = parts.map(([command, args]) =>
