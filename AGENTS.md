@@ -81,6 +81,7 @@ npm run build
 - `src/TabStudio.tsx`의 훅이 App의 전역 `songMode`·`playing`과 연결한다. `src/songAudio.ts`는 공통 AudioContext와 마스터 버스를 사용하고 15초 청크를 동기 스케줄링한다. 곡 모드에서는 합성 반주를 실행하지 않는다. 재생 위치는 원곡 초 기준이며 화면 전환/일시정지로 초기화하지 않는다.
 - `src/tablature.ts`는 타브 타입·운지 경로 탐색·실제 박 위치의 마디 매핑을 담당한다. 튜닝은 1번 줄부터 MIDI로 저장하며 fret은 실제 프렛, UI 숫자는 카포 기준이다. 불가능한 음은 삭제/옥타브 이동 없이 미배치로 유지한다. 주법은 추정과 사용자 확정을 구분한다.
 - `server/app.py`는 로컬 전용 FastAPI와 취소 가능한 작업 수명, `worker.py`는 Demucs/Basic Pitch/librosa, `schemas.py`는 편집 데이터 검증을 담당한다. 원본 결과와 수동 편집은 별도 파일이다. 최초 분석 전 저장이 이후 모델 결과를 가리면 안 된다. 저장 형식은 version 1이며 프로젝트 ID는 UUID로 검증한다.
+- `gate` 미들웨어는 `Origin` 호스트네임이 루프백이거나 `JAMBRIDGE_ALLOWED_HOSTS`(콤마 구분, `*`=전체)에 있을 때만 통과시킨다. 기본값은 `localhost`/`127.0.0.1`/`::1`. LAN·도메인 배포는 이 변수로 호스트를 등록한다.
 - `/api/projects*`는 로그인 후에만 접근 가능하다. 계정은 `account.json`(단일 계정, PBKDF2 해시)에 저장하고, `/api/auth`(상태)·`/api/auth/register`·`/api/auth/login`·`/api/auth/logout`이 관리하며 토큰은 서버 메모리 세션이다. 프런트는 `useTabSong`이 인증 상태를 들고 있고, `TabStudio`는 미로그인 시 `TabLogin` 폼만 렌더한다. `src/tablature.ts`의 `api()`와 `authHeaders()`는 `jambrigde-tab-auth` 토큰을 `Authorization` 헤더로 실어 보내고, `api()`는 401이면 `AuthError`를 던진다. stem 오디오를 직접 `fetch`하는 `songAudio.ts`도 `authHeaders()`를 쓴다.
 - 오디오·모델·결과는 `server/data`(또는 `JAMBRIDGE_DATA`)에 저장하고 브라우저에는 `jambrigde-tab-current`와 세션 참조만 둔다. 모델 다운로드는 사용자의 분석 시작 후에만 발생한다. 서버는 `npm run server`로 127.0.0.1:8000에서 실행하며 Vite `/api` 프록시가 연결한다.
 - 타브는 마디별 반응형 배치를 사용하고 음이 많은 마디만 내부 가로 스크롤을 허용한다. 기본 최소 글꼴 16px을 유지한다. 모델의 추정 결과와 실제 악보/주법을 동일시하지 않는다.

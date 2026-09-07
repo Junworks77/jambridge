@@ -44,19 +44,31 @@ ACCOUNT = DATA / "account.json"
 SESSION_TTL = 30 * 24 * 3600
 sessions: dict[str, float] = {}
 
+# Browser Origins allowed to call the API. Loopback is always allowed; add the
+# LAN/VPN host the app is actually reached at via JAMBRIDGE_ALLOWED_HOSTS
+# (comma-separated hostnames, or "*" to accept any Origin).
+_extra_hosts = os.environ.get("JAMBRIDGE_ALLOWED_HOSTS", "")
+ALLOW_ANY_ORIGIN = "*" in {h.strip() for h in _extra_hosts.split(",")}
+ALLOWED_HOSTS = {"localhost", "127.0.0.1", "::1"} | {
+    h.strip().lower() for h in _extra_hosts.split(",") if h.strip() and h.strip() != "*"
+}
+
 
 @app.middleware("http")
 async def gate(request: Request, call_next):
     origin = request.headers.get("origin")
-    if origin:
+    if origin and not ALLOW_ANY_ORIGIN:
         try:
-            allowed = urlsplit(origin).hostname in ("localhost", "127.0.0.1", "::1")
+            host = (urlsplit(origin).hostname or "").lower()
         except ValueError:
-            allowed = False
-        if not allowed:
+            host = ""
+        if host not in ALLOWED_HOSTS:
             return JSONResponse(
                 status_code=403,
-                content={"detail": "로컬 앱에서만 분석 서버를 사용할 수 있습니다."},
+                content={
+                    "detail": "허용되지 않은 접속 주소입니다. 서버의 "
+                    "JAMBRIDGE_ALLOWED_HOSTS 설정에 이 호스트를 추가해 주세요."
+                },
             )
     if request.url.path.startswith("/api/projects") and not authed(request):
         return JSONResponse(
