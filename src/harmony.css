@@ -1,0 +1,700 @@
+.harmony-workspace {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+}
+.harmony-library-toolbar {
+  padding: 17px 20px 13px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+}
+.harmony-categories {
+  display: flex;
+  gap: 5px;
+}
+.harmony-categories > button {
+  padding: 8px 13px;
+  border: 1px solid color-mix(in oklab, var(--accent) 32%, var(--tone-dark));
+  border-radius: 6px;
+  font-size: 16px;
+  color: color-mix(in oklab, var(--accent) 61%, var(--tone-light));
+  white-space: nowrap;
+}
+.harmony-categories > button.active {
+  background: color-mix(in srgb, var(--lime) 9.4%, transparent);
+  border-color: color-mix(in oklab, var(--accent) 58%, var(--tone-dark));
+  color: var(--lime);
+}
+.harmony-search {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 70px;
+  max-width: 145px;
+  color: color-mix(in oklab, var(--accent) 57%, var(--tone-dark));
+}
+.harmony-search input {
+  background: color-mix(in oklab, var(--accent) 18%, var(--tone-dark));
+  border: 1px solid color-mix(in oklab, var(--accent) 30%, var(--tone-dark));
+  border-radius: 5px;
+  width: 100%;
+  padding: 7px 9px;
+  font-size: 16px;
+}
+.harmony-presets {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  max-height: 302px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklab, var(--accent) 40%, var(--tone-dark))
+    transparent;
+  padding: 0 20px 17px;
+}
+.harmony-preset {
+  padding: 14px 15px 0;
+  background: color-mix(in oklab, var(--accent) 22%, var(--tone-dark));
+  border: 1px solid color-mix(in oklab, var(--accent) 30%, var(--tone-dark));
+  border-radius: 7px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.harmony-preset-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 16px;
+  color: color-mix(in oklab, var(--accent) 60%, var(--tone-dark));
+  letter-spacing: 0.4px;
+  min-height: 18px;
+}
+.harmony-preset-meta .difficulty {
+  letter-spacing: 2px;
+  color: #c7a57a;
+  font-size: 16px;
+  white-space: nowrap;
+}
+.harmony-preset h3 {
+  font-size: 16px;
+  font-weight: 550;
+  line-height: 1.6;
+  margin: 7px 0 6px;
+  overflow-wrap: anywhere;
+}
+.preset-formula {
+  color: color-mix(in oklab, var(--accent) 73%, var(--tone-light));
+  font-size: 16px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.preset-description {
+  font-size: 16px;
+  color: color-mix(in oklab, var(--accent) 57%, var(--tone-dark));
+  line-height: 1.7;
+  margin: 5px 0 13px;
+}
+.preset-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid color-mix(in oklab, var(--accent) 31%, var(--tone-dark));
+  margin-top: auto;
+  padding: 9px 0;
+  gap: 8px;
+}
+.preset-actions > button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: color-mix(in oklab, var(--accent) 72%, var(--tone-light));
+  font-size: 16px;
+  padding: 4px 0;
+}
+.preset-actions > button:last-child {
+  font-size: 16px;
+  color: color-mix(in oklab, var(--accent) 57%, var(--tone-light));
+}
+.library-note {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 20px;
+  border-top: 1px solid var(--border);
+  font-size: 16px;
+  color: color-mix(in oklab, var(--accent) 57%, var(--tone-dark));
+  line-height: 1.8;
+}
+.harmony-empty {
+  grid-column: 1/-1;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: color-mix(in oklab, var(--accent) 59%, var(--tone-dark));
+  font-size: 16px;
+}
+.arrangement-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 16px 22px 0;
+}
+.arrangement-toolbar > span {
+  font-size: 16px;
+  color: color-mix(in oklab, var(--accent) 56%, var(--tone-light));
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.arrangement-toolbar i {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: color-mix(in oklab, var(--accent) 48%, var(--tone-dark));
+}
+.arrangement-toolbar > div {
+  display: flex;
+  gap: 13px;
+}
+.arrangement-toolbar .text-button {
+  font-size: 16px;
+}
+.harmony-workspace .expanded-progression {
+  max-height: 480px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklab, var(--accent) 41%, var(--tone-dark))
+    transparent;
+}
+.expanded-progression .chord-main-button strong {
+  font-size: clamp(16px, 1.8vw, 27px);
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  line-height: 1.3;
+  min-height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+.expanded-progression .chord-main-button > span:first-child {
+  font-size: 16px;
+  min-height: 14px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  padding: 0 3px;
+}
+.expanded-progression .bar-label {
+  font-size: 16px;
+}
+.chord-event-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px 0;
+  border-top: 1px solid color-mix(in oklab, var(--accent) 28%, var(--tone-dark));
+}
+.chord-event-actions .icon-button {
+  width: 24px;
+  height: 24px;
+  color: color-mix(in oklab, var(--accent) 54%, var(--tone-dark));
+}
+.progression-footer > div {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.progression-save-form {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background: color-mix(in oklab, var(--accent) 25%, var(--tone-dark));
+  margin: 16px 22px 0;
+  padding: 12px;
+  border-radius: 6px;
+}
+.progression-save-form input {
+  min-width: 0;
+  flex: 1;
+  background: color-mix(in oklab, var(--accent) 18%, var(--tone-dark));
+  border: 1px solid color-mix(in oklab, var(--accent) 39%, var(--tone-dark));
+  border-radius: 5px;
+  padding: 9px;
+  font-size: 16px;
+}
+.progression-save-form .button {
+  font-size: 16px;
+  min-height: 32px;
+  padding: 8px 10px;
+}
+.chord-composer {
+  scroll-margin-bottom: 100px;
+  scroll-margin-top: 18px;
+  border-top: 1px solid color-mix(in oklab, var(--accent) 31%, var(--tone-dark));
+  padding: 21px;
+  background: color-mix(in oklab, var(--accent) 21%, var(--tone-dark));
+}
+.composer-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 19px;
+}
+.composer-heading h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 8px;
+}
+.composer-heading .eyebrow {
+  font-size: 16px;
+  letter-spacing: 1.5px;
+}
+.composer-fields {
+  display: grid;
+  grid-template-columns: 1fr 1.55fr 1fr 1fr;
+  gap: 12px;
+}
+.composer-fields label,
+.custom-intervals > label {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: 16px;
+  color: color-mix(in oklab, var(--accent) 57%, var(--tone-light));
+  min-width: 0;
+}
+.composer-fields select {
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  padding: 9px 7px;
+  background: color-mix(in oklab, var(--accent) 17%, var(--tone-dark));
+  border: 1px solid color-mix(in oklab, var(--accent) 37%, var(--tone-dark));
+  border-radius: 5px;
+  color: color-mix(in oklab, var(--accent) 79%, var(--tone-light));
+  font-size: 16px;
+}
+.composer-preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  background: color-mix(in oklab, var(--accent) 18%, var(--tone-dark));
+  border: 1px solid color-mix(in oklab, var(--accent) 31%, var(--tone-dark));
+  border-radius: 6px;
+  padding: 15px;
+  margin-top: 19px;
+}
+.composer-preview > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+.composer-preview strong {
+  font-size: 25px;
+  font-weight: 500;
+  color: color-mix(in oklab, var(--accent) 79%, var(--tone-light));
+  overflow-wrap: anywhere;
+}
+.composer-preview > div > span {
+  font-size: 16px;
+  color: color-mix(in oklab, var(--accent) 61%, var(--tone-dark));
+  line-height: 1.8;
+}
+.composer-preview > .button {
+  font-size: 16px;
+  padding: 9px 10px;
+}
+.flat-label {
+  font-size: 16px;
+  color: color-mix(in oklab, var(--accent) 59%, var(--tone-light));
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+  white-space: nowrap;
+}
+.flat-label input {
+  accent-color: var(--lime);
+}
+.composer-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-top: 16px;
+}
+.composer-actions .button {
+  font-size: 16px;
+}
+.custom-intervals {
+  padding: 17px 0 0;
+}
+.custom-intervals input {
+  border: 1px solid color-mix(in oklab, var(--accent) 37%, var(--tone-dark));
+  background: color-mix(in oklab, var(--accent) 19%, var(--tone-dark));
+  border-radius: 5px;
+  padding: 9px;
+  color: color-mix(in oklab, var(--accent) 80%, var(--tone-light));
+  font-size: 16px;
+  max-width: 260px;
+}
+.interval-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 15px 0 10px;
+}
+.interval-buttons button {
+  width: 34px;
+  height: 30px;
+  border: 1px solid color-mix(in oklab, var(--accent) 34%, var(--tone-dark));
+  background: color-mix(in oklab, var(--accent) 20%, var(--tone-dark));
+  color: color-mix(in oklab, var(--accent) 57%, var(--tone-dark));
+  border-radius: 5px;
+  font-size: 16px;
+}
+.interval-buttons button[aria-pressed="true"] {
+  color: color-mix(in oklab, var(--accent) 81%, var(--tone-light));
+  background: color-mix(in oklab, var(--accent) 30%, var(--tone-dark));
+  border-color: color-mix(in oklab, var(--accent) 56%, var(--tone-light));
+}
+.custom-intervals p {
+  font-size: 16px;
+  color: color-mix(in oklab, var(--accent) 58%, var(--tone-dark));
+}
+.text-progression {
+  border-top: 1px solid var(--border);
+  padding: 18px 21px;
+  background: color-mix(in oklab, var(--accent) 21%, var(--tone-dark));
+}
+.text-progression summary {
+  cursor: pointer;
+  font-size: 16px;
+  color: color-mix(in oklab, var(--accent) 64%, var(--tone-light));
+}
+.text-progression p {
+  font-size: 16px;
+  color: color-mix(in oklab, var(--accent) 58%, var(--tone-dark));
+  line-height: 1.9;
+  margin: 15px 0 12px;
+}
+.text-progression textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 78px;
+  max-height: 250px;
+  background: color-mix(in oklab, var(--accent) 17%, var(--tone-dark));
+  border: 1px solid color-mix(in oklab, var(--accent) 36%, var(--tone-dark));
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 16px;
+  color: color-mix(in oklab, var(--accent) 78%, var(--tone-light));
+  font-family: "DM Sans", sans-serif;
+}
+.text-progression > div {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-top: 12px;
+}
+.text-progression .button {
+  font-size: 16px;
+}
+.harmony-error {
+  position: sticky;
+  bottom: 98px;
+  z-index: 36;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #402c24;
+  border: 1px solid #b27656;
+  border-radius: 7px;
+  padding: 13px 16px;
+  color: #f0c1a3;
+  font-size: 16px;
+  line-height: 1.7;
+}
+.harmony-workspace .progression-footer > span {
+  line-height: 1.8;
+}
+.mode-options {
+  flex-wrap: wrap;
+}
+.scale-note-list {
+  flex-wrap: wrap;
+}
+@media (min-width: 1600px) {
+  .harmony-presets {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 1200px) {
+  .harmony-library-toolbar {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .harmony-search {
+    max-width: 130px;
+  }
+  .harmony-categories > button {
+    padding: 7px 10px;
+    font-size: 16px;
+  }
+  .arrangement-toolbar {
+    flex-wrap: wrap;
+    gap: 11px;
+  }
+  .composer-fields {
+    grid-template-columns: 1fr 1fr;
+  }
+  .harmony-workspace .progression-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .harmony-workspace .expanded-progression {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .expanded-progression .chord-main-button strong {
+    font-size: 22px;
+  }
+  .library-note {
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+  .harmony-presets {
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 8px;
+  }
+  .harmony-preset {
+    padding: 12px 12px 0;
+  }
+}
+@media (max-width: 760px) {
+  .harmony-library-toolbar {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .harmony-search {
+    max-width: 150px;
+  }
+  .harmony-presets {
+    max-height: 320px;
+  }
+  .harmony-workspace .expanded-progression {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    max-height: 430px;
+  }
+  .composer-fields {
+    grid-template-columns: 1fr 1.5fr 1fr 1fr;
+  }
+  .harmony-preset h3 {
+    font-size: 16px;
+  }
+  .harmony-library .panel-heading .outline-tag {
+    font-size: 16px;
+  }
+  .harmony-library .panel-heading > .text-button {
+    font-size: 16px;
+  }
+  .harmony-workspace .progression-footer {
+    flex-direction: row;
+    align-items: center;
+  }
+  .harmony-workspace .progression-footer > div {
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  .harmony-workspace .progression-footer .text-button {
+    font-size: 16px;
+  }
+}
+@media (max-width: 540px) {
+  .harmony-workspace {
+    gap: 15px;
+  }
+  .harmony-library .panel-heading {
+    gap: 8px;
+  }
+  .harmony-library .panel-heading h2 {
+    font-size: 16px;
+    gap: 5px;
+  }
+  .harmony-library .panel-heading .outline-tag {
+    font-size: 16px;
+    margin-left: 0;
+    padding: 4px;
+  }
+  .harmony-library .panel-heading > .text-button {
+    font-size: 16px;
+    gap: 4px;
+  }
+  .harmony-library-toolbar {
+    padding: 15px 13px 12px;
+    gap: 11px;
+  }
+  .harmony-categories {
+    width: 100%;
+    gap: 5px;
+  }
+  .harmony-categories > button {
+    flex: 1;
+    padding: 8px 5px;
+    font-size: 16px;
+  }
+  .harmony-search {
+    max-width: none;
+    width: 100%;
+  }
+  .harmony-search input {
+    padding: 8px 9px;
+  }
+  .harmony-presets {
+    grid-template-columns: 1fr;
+    padding: 0 13px 13px;
+    max-height: 350px;
+    gap: 9px;
+  }
+  .harmony-preset {
+    padding: 12px 14px 0;
+  }
+  .harmony-preset h3 {
+    font-size: 16px;
+  }
+  .preset-formula {
+    font-size: 16px;
+  }
+  .preset-description {
+    font-size: 16px;
+  }
+  .harmony-preset-meta {
+    font-size: 16px;
+  }
+  .preset-actions > button {
+    font-size: 16px;
+  }
+  .preset-actions > button:last-child {
+    font-size: 16px;
+  }
+  .library-note {
+    font-size: 16px;
+    padding: 11px 14px;
+  }
+  .arrangement-toolbar {
+    padding: 14px 14px 0;
+    gap: 12px;
+  }
+  .arrangement-toolbar > div {
+    gap: 15px;
+  }
+  .arrangement-toolbar .text-button {
+    font-size: 16px;
+  }
+  .harmony-workspace .expanded-progression {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-height: 417px;
+  }
+  .expanded-progression .chord-main-button strong {
+    font-size: 26px;
+  }
+  .harmony-workspace .progression-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .harmony-workspace .progression-footer > div {
+    justify-content: space-between;
+    width: 100%;
+  }
+  .harmony-workspace .progression-footer .text-button {
+    font-size: 16px;
+  }
+  .progression-panel .inline-actions {
+    gap: 8px;
+  }
+  .progression-panel .loop-label {
+    display: none;
+  }
+  .progression-save-form {
+    margin: 14px 13px 0;
+    padding: 10px;
+    flex-wrap: wrap;
+  }
+  .progression-save-form input {
+    flex-basis: 100%;
+  }
+  .progression-save-form .button {
+    flex: 1;
+  }
+  .chord-composer {
+    padding: 18px 14px;
+  }
+  .composer-fields {
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+  }
+  .composer-fields select {
+    font-size: 16px;
+    padding: 10px 7px;
+  }
+  .composer-fields label {
+    font-size: 16px;
+  }
+  .composer-preview {
+    padding: 12px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .composer-preview > div {
+    width: 100%;
+  }
+  .composer-preview .flat-label {
+    margin-left: 0;
+  }
+  .composer-preview > .button {
+    margin-left: auto;
+  }
+  .composer-preview strong {
+    font-size: 27px;
+  }
+  .composer-actions {
+    flex-wrap: wrap;
+  }
+  .composer-actions .button {
+    flex: 1;
+    font-size: 16px;
+    padding: 10px;
+  }
+  .text-progression {
+    padding: 17px 14px;
+  }
+  .text-progression p {
+    font-size: 16px;
+  }
+  .text-progression .button {
+    font-size: 16px;
+    padding: 10px;
+  }
+  .harmony-error {
+    font-size: 16px;
+    bottom: 90px;
+  }
+  .harmony-library .harmony-empty {
+    padding: 10px;
+    text-align: center;
+    line-height: 1.9;
+  }
+}

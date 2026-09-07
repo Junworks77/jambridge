@@ -1,0 +1,471 @@
+.rhythm-preset-library {
+  margin-bottom: 20px;
+}
+.rhythm-genres {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  padding: 17px 22px 14px;
+}
+.rhythm-genres button {
+  padding: 8px 13px;
+  border-radius: 6px;
+  border: 1px solid color-mix(in oklab, var(--accent) 33%, var(--tone-dark));
+  font-size: 16px;
+  color: color-mix(in oklab, var(--accent) 61%, var(--tone-light));
+}
+.rhythm-genres button.active {
+  background: color-mix(in srgb, var(--lime) 8.6%, transparent);
+  color: var(--lime);
+  border-color: color-mix(in oklab, var(--accent) 54%, var(--tone-dark));
+}
+.rhythm-preset-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  max-height: 315px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklab, var(--accent) 43%, var(--tone-dark))
+    transparent;
+  padding: 0 22px 17px;
+}
+.rhythm-preset-card {
+  border: 1px solid color-mix(in oklab, var(--accent) 31%, var(--tone-dark));
+  border-radius: 7px;
+  padding: 14px 15px;
+  text-align: left;
+  background: color-mix(in oklab, var(--accent) 22%, var(--tone-dark));
+  min-width: 0;
+}
+.rhythm-preset-card.selected {
+  background: color-mix(in oklab, var(--accent) 25%, var(--tone-dark));
+  border-color: color-mix(in oklab, var(--accent) 60%, var(--tone-dark));
+}
+.rhythm-preset-card > div {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  font-size: 16px;
+  color: color-mix(in oklab, var(--accent) 56%, var(--tone-light));
+}
+.rhythm-preset-card > div > svg {
+  margin-left: auto;
+  color: color-mix(in oklab, var(--accent) 61%, var(--tone-light));
+}
+.meter-badge {
+  background: color-mix(in oklab, var(--accent) 31%, var(--tone-dark));
+  border: 1px solid color-mix(in oklab, var(--accent) 42%, var(--tone-dark));
+  padding: 4px 7px;
+  border-radius: 4px;
+  color: color-mix(in oklab, var(--accent) 79%, var(--tone-light));
+  font-size: 16px;
+  font-weight: 600;
+}
+.rhythm-preset-card h3 {
+  font-size: 16px;
+  font-weight: 550;
+  margin: 13px 0 8px;
+}
+.rhythm-preset-card p {
+  font-size: 16px;
+  color: color-mix(in oklab, var(--accent) 56%, var(--tone-light));
+  line-height: 1.9;
+  min-height: 34px;
+}
+.preset-grouping {
+  display: block;
+  margin-top: 11px;
+  font-size: 16px;
+  color: color-mix(in oklab, var(--accent) 70%, var(--tone-light));
+  letter-spacing: 1px;
+}
+.rhythm-library-note {
+  font-size: 16px;
+  color: color-mix(in oklab, var(--accent) 59%, var(--tone-dark));
+  padding: 12px 22px;
+  border-top: 1px solid var(--border);
+  line-height: 1.8;
+}
+.rhythm-meter-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 24px 0;
+}
+.rhythm-meter-controls label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: color-mix(in oklab, var(--accent) 61%, var(--tone-light));
+  font-size: 16px;
+}
+.rhythm-meter-controls select {
+  padding: 8px 28px 8px 10px;
+  border: 1px solid color-mix(in oklab, var(--accent) 38%, var(--tone-dark));
+  border-radius: 5px;
+  background: color-mix(in oklab, var(--accent) 19%, var(--tone-dark));
+  color: color-mix(in oklab, var(--accent) 79%, var(--tone-light));
+  font-size: 16px;
+}
+.grouping-controls {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 16px;
+  color: color-mix(in oklab, var(--accent) 57%, var(--tone-light));
+}
+.grouping-controls > button {
+  padding: 7px 9px;
+  font-size: 16px;
+  border: 1px solid color-mix(in oklab, var(--accent) 35%, var(--tone-dark));
+  border-radius: 5px;
+  color: color-mix(in oklab, var(--accent) 59%, var(--tone-dark));
+}
+.grouping-controls > button.active {
+  background: color-mix(in oklab, var(--accent) 31%, var(--tone-dark));
+  border-color: color-mix(in oklab, var(--accent) 61%, var(--tone-dark));
+  color: color-mix(in oklab, var(--accent) 78%, var(--tone-light));
+}
+.grouping-controls > span {
+  margin-right: 4px;
+}
+.rhythm-groups {
+  display: grid;
+  gap: 3px;
+  margin: 19px 24px 0;
+}
+.rhythm-groups > span {
+  padding: 6px 0;
+  background: color-mix(
+    in srgb,
+    color-mix(in oklab, var(--accent) 63%, var(--tone-light)) 6.3%,
+    transparent
+  );
+  border-bottom: 2px solid
+    color-mix(in oklab, var(--accent) 53%, var(--tone-dark));
+  border-radius: 4px 4px 0 0;
+  font-size: 16px;
+  color: color-mix(in oklab, var(--accent) 64%, var(--tone-light));
+  text-align: center;
+}
+.rhythm-main .rhythm-grid {
+  margin-top: 5px;
+}
+.rhythm-step.group-start .hit-dot {
+  box-shadow: 0 0 0 2px
+    color-mix(
+      in srgb,
+      color-mix(in oklab, var(--accent) 70%, var(--tone-light)) 14.5%,
+      transparent
+    );
+}
+.rhythm-step.group-start .rhythm-count {
+  color: #e2d0a2;
+}
+.rhythm-step.group-start {
+  border-left-color: color-mix(in oklab, var(--accent) 55%, var(--tone-dark));
+}
+.rhythm-grid-scroll {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklab, var(--accent) 43%, var(--tone-dark))
+    transparent;
+}
+.rhythm-main .rhythm-grid-scroll .rhythm-grid {
+  min-width: 500px;
+}
+.rhythm-main .rhythm-grid-scroll .rhythm-groups {
+  min-width: 500px;
+}
+.rhythm-meter-note {
+  font-size: 16px;
+  color: color-mix(in oklab, var(--accent) 62%, var(--tone-dark));
+  line-height: 1.9;
+  padding: 12px 24px 0;
+}
+.rhythm-edit-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 3px 6px;
+  font-size: 16px;
+  border: 1px solid color-mix(in oklab, var(--accent) 45%, var(--tone-dark));
+  border-radius: 4px;
+  color: #d1c797;
+  vertical-align: middle;
+}
+.tempo-unit-note {
+  font-size: 16px !important;
+  color: color-mix(in oklab, var(--accent) 61%, var(--tone-dark)) !important;
+  letter-spacing: 0 !important;
+}
+.metronome-settings .meter-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.big-beats.many-beats {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.big-beats.many-beats > div {
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+}
+.big-beats > div.group-accent {
+  border-color: color-mix(in oklab, var(--accent) 59%, var(--tone-dark));
+}
+.transport-meter {
+  white-space: nowrap;
+}
+.transport-beats.grouped > span {
+  width: 7px;
+  height: 7px;
+}
+@media (max-width: 1100px) {
+  .rhythm-preset-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .rhythm-meter-controls {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .rhythm-title .eyebrow {
+    font-size: 16px;
+  }
+  .rhythm-title h2 {
+    font-size: 21px;
+  }
+}
+@media (max-width: 760px) {
+  .rhythm-pattern-actions .add-pattern {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+  }
+  .rhythm-pattern-actions .add-pattern > span {
+    display: none;
+  }
+  .rhythm-pattern-list {
+    gap: 12px;
+    padding: 16px 14px 6px;
+  }
+  .rhythm-pattern-row,
+  .rhythm-pattern-row:first-child {
+    overflow: hidden;
+    padding: 0 0 14px;
+    border: 1px solid color-mix(in oklab, var(--accent) 28%, var(--tone-dark));
+    border-radius: 9px;
+    background: color-mix(in oklab, var(--accent) 7%, var(--tone-dark));
+  }
+  .rhythm-pattern-row-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 9px;
+    padding: 14px;
+    background: color-mix(in oklab, var(--accent) 9%, var(--tone-dark));
+  }
+  .rhythm-pattern-select {
+    min-width: 0;
+    overflow: hidden;
+  }
+  .rhythm-pattern-select strong,
+  .rhythm-pattern-select > span {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .line-meter-select {
+    margin-left: 0;
+    gap: 5px;
+    white-space: nowrap;
+  }
+  .line-meter-select select {
+    min-height: 42px;
+  }
+  .line-grouping-controls {
+    margin: 0 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid
+      color-mix(in oklab, var(--accent) 20%, var(--tone-dark));
+  }
+  .rhythm-pattern-row .rhythm-groups {
+    margin: 12px 14px 0;
+  }
+  .rhythm-groups > span {
+    min-height: 44px;
+    display: grid;
+    place-items: center;
+    padding: 6px 4px;
+    border: 1px solid color-mix(in oklab, var(--accent) 28%, var(--tone-dark));
+    border-bottom-width: 2px;
+    white-space: nowrap;
+  }
+  .rhythm-pattern-row-head,
+  .line-grouping-controls {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .rhythm-preset-list {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+  .rhythm-genres {
+    padding-left: 17px;
+    padding-right: 17px;
+    gap: 6px;
+  }
+  .rhythm-genres button {
+    font-size: 16px;
+    padding: 8px 10px;
+  }
+  .rhythm-preset-card {
+    padding: 12px;
+  }
+  .rhythm-meter-controls {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .rhythm-groups {
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+  .rhythm-main .rhythm-grid-scroll .rhythm-grid,
+  .rhythm-main .rhythm-grid-scroll .rhythm-groups {
+    min-width: 500px;
+  }
+  .rhythm-meter-note {
+    padding-left: 18px;
+    padding-right: 18px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 540px) {
+  .rhythm-pattern-list {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .rhythm-pattern-row-head {
+    padding: 12px;
+  }
+  .line-grouping-controls {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  .rhythm-pattern-row .rhythm-groups {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  .rhythm-pattern-row-head,
+  .line-grouping-controls {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .rhythm-preset-library {
+    margin-bottom: 16px;
+  }
+  .rhythm-preset-library .panel-heading h2 {
+    font-size: 16px;
+    gap: 5px;
+  }
+  .rhythm-preset-library .outline-tag {
+    font-size: 16px;
+  }
+  .rhythm-preset-list {
+    grid-template-columns: 1fr;
+    max-height: 295px;
+    padding: 0 13px 14px;
+    gap: 9px;
+  }
+  .rhythm-genres {
+    padding: 14px 13px 12px;
+    gap: 6px;
+  }
+  .rhythm-genres button {
+    font-size: 16px;
+    padding: 7px 10px;
+  }
+  .rhythm-preset-card {
+    padding: 13px 14px;
+  }
+  .rhythm-preset-card h3 {
+    font-size: 16px;
+    margin: 10px 0 6px;
+  }
+  .rhythm-preset-card p {
+    font-size: 16px;
+    min-height: 0;
+  }
+  .rhythm-preset-card > div {
+    font-size: 16px;
+  }
+  .preset-grouping {
+    font-size: 16px;
+    margin-top: 9px;
+  }
+  .rhythm-library-note {
+    padding: 12px 14px;
+    font-size: 16px;
+  }
+  .rhythm-meter-controls {
+    padding: 17px 14px 0;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .rhythm-meter-controls label {
+    font-size: 16px;
+    gap: 8px;
+  }
+  .rhythm-meter-controls select {
+    font-size: 16px;
+    padding: 7px 23px 7px 8px;
+  }
+  .grouping-controls {
+    font-size: 16px;
+    gap: 5px;
+  }
+  .grouping-controls > button {
+    padding: 7px;
+    font-size: 16px;
+  }
+  .rhythm-title h2 {
+    font-size: 19px;
+  }
+  .rhythm-groups {
+    margin-left: 13px;
+    margin-right: 13px;
+  }
+  .rhythm-main .rhythm-grid-scroll .rhythm-grid,
+  .rhythm-main .rhythm-grid-scroll .rhythm-groups {
+    min-width: 500px;
+  }
+  .rhythm-meter-note {
+    font-size: 16px;
+    padding: 12px 14px 0;
+  }
+  .rhythm-edit-badge {
+    font-size: 16px;
+  }
+  .transport-beats.grouped {
+    gap: 6px;
+  }
+  .transport-beats.grouped > span {
+    width: 6px;
+    height: 6px;
+  }
+  .big-beats.many-beats {
+    gap: 9px;
+  }
+  .big-beats.many-beats > div {
+    width: 31px;
+    height: 31px;
+  }
+  .rhythm-preset-library .muted-label {
+    display: none;
+  }
+}

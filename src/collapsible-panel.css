@@ -1,0 +1,32 @@
+.collapsible-panel > .panel-heading {
+  position: relative;
+  padding-right: 68px;
+  flex-wrap: wrap;
+}
+.collapsible-panel > .panel-heading > .panel-collapse-toggle {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+.collapsible-panel.is-collapsed > :not(.panel-heading) {
+  display: none !important;
+}
+.collapsible-panel.is-collapsed > .panel-heading {
+  border-bottom: 0;
+}
+.collapsible-panel.tap-training {
+  flex-wrap: wrap;
+}
+.collapsible-panel.tap-training > .panel-heading {
+  flex-basis: 100%;
+  width: 100%;
+  padding-left: 0;
+}
+.collapsible-panel.tap-training > .panel-heading h3 {
+  margin: 0;
+}

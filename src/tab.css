@@ -1,0 +1,325 @@
+.transport.song-mode .transport-beats,
+.transport.song-mode .transport-meter,
+.transport.song-mode .loop-indicator {
+  display: none;
+}
+.fret-note.song-note.root-note circle {
+  fill: var(--root-note-bg) !important;
+  stroke: var(--accent) !important;
+}
+.fret-note.song-note.root-note text {
+  fill: var(--root-note-text) !important;
+}
+.tab-studio {
+  display: grid;
+  gap: 24px;
+  min-width: 0;
+}
+.tab-studio .panel {
+  padding: 24px;
+  min-width: 0;
+}
+.tab-studio h2,
+.tab-studio h3 {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.tab-studio p {
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.tab-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 12px 0;
+  min-width: 0;
+}
+.tab-studio button,
+.tab-studio input,
+.tab-studio select {
+  font: inherit;
+  font-size: 16px;
+  max-width: 100%;
+}
+.tab-studio button {
+  min-height: 40px;
+  cursor: pointer;
+}
+.tab-studio input:not([type="range"]):not([type="checkbox"]),
+.tab-studio select {
+  background: var(--tone-dark);
+  color: var(--text);
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  padding: 9px;
+  border-radius: 8px;
+  width: 100%;
+  min-width: 0;
+}
+.tab-studio button[aria-pressed="true"],
+.tab-studio .selected {
+  background: color-mix(in srgb, var(--accent) 24%, var(--tone-dark));
+  border-color: var(--accent);
+}
+.tab-parts label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.tab-parts input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+  accent-color: var(--accent);
+}
+.tab-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  margin: 16px 0;
+}
+.tab-fields label {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+.tab-upload input[type="file"] {
+  display: block;
+  width: 240px;
+}
+.tab-upload .tab-row > select {
+  width: min(100%, 400px);
+}
+.tab-notice {
+  padding: 12px;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  border-radius: 8px;
+}
+.tab-auth-form {
+  display: grid;
+  gap: 14px;
+  max-width: 360px;
+  margin-top: 16px;
+}
+.tab-auth-form label {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+.tab-account {
+  margin-left: auto;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  font-size: 16px;
+  overflow-wrap: anywhere;
+}
+.tab-analysis progress {
+  width: 100%;
+  margin-top: 16px;
+  accent-color: var(--accent);
+}
+.tab-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0;
+}
+.tab-sections button {
+  display: grid;
+  gap: 6px;
+  flex: 1 1 130px;
+  padding: 12px;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  border-radius: 8px;
+  background: var(--tone-dark);
+  color: inherit;
+}
+.tab-seek {
+  flex: 1 1 180px;
+  accent-color: var(--accent);
+}
+.tab-stems {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+.tab-stems fieldset {
+  min-width: 0;
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  border-radius: 12px;
+  padding: 14px;
+}
+.tab-stems input {
+  width: 100%;
+  accent-color: var(--accent);
+}
+.tab-stems button,
+.tab-measures button {
+  color: inherit;
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  background: var(--tone-dark);
+  border-radius: 6px;
+}
+.tab-stems fieldset:disabled {
+  opacity: 0.55;
+}
+.tab-score-guide {
+  color: var(--muted);
+  font-size: 16px;
+}
+.tab-measures {
+  max-height: 650px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 28px 0;
+  padding: 8px 2px 20px;
+  overscroll-behavior: contain;
+}
+.tab-measure {
+  flex-grow: 1;
+  min-width: 0;
+  max-width: 100%;
+}
+.tab-measures .tab-measure-title {
+  display: block;
+  min-width: 40px;
+  padding: 4px 10px;
+  margin: 0 0 6px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font-weight: 700;
+}
+.tab-measure.current .tab-measure-title {
+  color: var(--accent);
+  box-shadow: inset 0 -2px var(--accent);
+}
+.tab-staff {
+  display: grid;
+  height: 260px;
+  grid-template-rows: repeat(6, minmax(0, 1fr));
+  padding-block: 10px;
+  overflow-x: auto;
+  border-inline: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  background: var(--panel);
+}
+.tab-string {
+  display: contents;
+}
+.tab-cell {
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    transparent calc(50% - 0.75px),
+    color-mix(in srgb, var(--accent) 65%, transparent) calc(50% - 0.75px),
+    color-mix(in srgb, var(--accent) 65%, transparent) calc(50% + 0.75px),
+    transparent calc(50% + 0.75px)
+  );
+}
+.tab-measures .tab-note {
+  position: relative;
+  text-align: center;
+  cursor: default;
+  flex-shrink: 0;
+  min-width: 26px;
+  min-height: 28px;
+  padding: 0 3px;
+  border: 0;
+  border-radius: 3px;
+  background: var(--panel);
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  line-height: 28px;
+}
+.tab-note.estimated {
+  text-decoration: underline dotted;
+  text-underline-offset: 4px;
+  text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent);
+}
+.tab-note > span {
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  transform: translateX(-50%);
+  z-index: 1;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  background: var(--panel);
+  white-space: nowrap;
+}
+.tab-note > span:empty {
+  display: none;
+}
+.tab-measures .tab-note.sounding {
+  background: var(--accent);
+  color: var(--tone-dark);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+.tab-measures button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.tab-unplaced {
+  padding-inline: 10px;
+}
+.fret-note.song-note {
+  opacity: 1 !important;
+}
+.fret-note.song-note circle {
+  fill: var(--accent) !important;
+  stroke: var(--tone-light) !important;
+  stroke-width: 3px !important;
+}
+.fret-note.song-note text {
+  fill: var(--tone-dark) !important;
+}
+@media (max-width: 600px) {
+  .tab-studio .panel {
+    padding: 16px;
+  }
+  .tab-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .tab-studio .tab-row > h2 {
+    flex-basis: 100%;
+  }
+  .tab-measures {
+    max-height: 520px;
+    padding: 0;
+  }
+}
+
+.tab-studio .tab-inline-board {
+  margin: 16px 0 24px;
+  padding: 0;
+  min-width: 0;
+}
+.tab-inline-board .fretboard {
+  min-width: 1120px;
+}
+
+.tab-inline-board .panel-heading,
+.tab-inline-board .board-tools {
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.tab-inline-board .panel-heading > *,
+.tab-inline-board .board-tools > * {
+  min-width: 0;
+  max-width: 100%;
+}
+.tab-inline-board .tab-group button,
+.tab-inline-board .notation-tabs button {
+  white-space: nowrap;
+}
